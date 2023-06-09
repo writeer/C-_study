@@ -1,0 +1,25 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "stdlib.h": "c",
+        "algorithm": "c",
+        "string.h": "c",
+        "stdio.h": "c",
+        "list_code3.h": "c",
+        "tree_code7.h": "c",
+        "tree.h": "c",
+        "tree_code8.h": "c",
+        "string": "c",
+        "type_traits": "c",
+        "sstream": "c",
+        "ctype.h": "c",
+        "optional": "c",
+        "istream": "c",
+        "ostream": "c",
+        "system_error": "c",
+        "array": "c",
+        "tuple": "c",
+        "utility": "c"
+    }
+    
+}
