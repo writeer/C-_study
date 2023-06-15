@@ -1,0 +1,60 @@
+{
+	"folders": [
+		{
+			"name": "C++_study",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"stdlib.h": "c",
+			"algorithm": "c",
+			"string.h": "c",
+			"stdio.h": "c",
+			"list_code3.h": "c",
+			"tree_code7.h": "c",
+			"tree.h": "c",
+			"tree_code8.h": "c",
+			"string": "c",
+			"type_traits": "c",
+			"sstream": "c",
+			"ctype.h": "c",
+			"optional": "c",
+			"istream": "c",
+			"ostream": "c",
+			"system_error": "c",
+			"array": "c",
+			"tuple": "c",
+			"utility": "c",
+			"iosfwd": "cpp",
+			"atomic": "cpp",
+			"*.tcc": "cpp",
+			"cctype": "cpp",
+			"clocale": "cpp",
+			"cmath": "cpp",
+			"cstdarg": "cpp",
+			"cstddef": "cpp",
+			"cstdint": "cpp",
+			"cstdio": "cpp",
+			"cstdlib": "cpp",
+			"cwchar": "cpp",
+			"cwctype": "cpp",
+			"deque": "cpp",
+			"unordered_map": "cpp",
+			"vector": "cpp",
+			"exception": "cpp",
+			"memory": "cpp",
+			"memory_resource": "cpp",
+			"string_view": "cpp",
+			"fstream": "cpp",
+			"initializer_list": "cpp",
+			"iostream": "cpp",
+			"limits": "cpp",
+			"new": "cpp",
+			"stdexcept": "cpp",
+			"streambuf": "cpp",
+			"cinttypes": "cpp",
+			"typeinfo": "cpp"
+		}
+	}
+}
