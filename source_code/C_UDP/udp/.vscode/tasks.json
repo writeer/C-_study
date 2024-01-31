@@ -1,0 +1,53 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "task g++",
+            "command": "F:\\AU\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-g",
+                "-m32",//可以加入-std=c99,或者c1x ，c11，来激活特性，使用标准编译。
+                //"-fexec-charset=utf-8",
+                //"-lws2_32",
+                //"-std=c99",
+                "${file}",//filedirname，更改括号中的单词为这个，可以编译当前目录下的所有文件
+                "${fileDirname}\\Ws2_32.lib",
+                "-o",
+                "${fileDirname}\\build\\${fileBasenameNoExtension}.exe",
+                "-I",
+                "F:\\AA\\C_study"
+                
+            ],
+            "options": {
+                "cwd": "F:\\AU\\mingw64\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe 生成活动文件",
+            "command": "F:\\AU\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "编译器: F:\\AU\\mingw64\\bin\\gcc.exe"
+        }
+    ]
+}
