@@ -1,0 +1,93 @@
+\hypertarget{fgrep_8c}{}\doxysection{fgrep.\+c File Reference}
+\label{fgrep_8c}\index{fgrep.c@{fgrep.c}}
+
+
+实现unix里的 fgrap命令，第一个参数是字符串参数  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{fgrep_8c_a1aedaca7c0244922c5ed1320d9821049}{cmp\+\_\+str}} (char $\ast$src, char $\ast$dst)
+\item 
+void \mbox{\hyperlink{fgrep_8c_a37e250827e16bb9b0c85458c5f72614a}{print\+\_\+str}} (char $\ast$str, char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em 打印文件中匹配的字符串的行号 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{fgrep_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em 主函数，接受命令行参数并调用其他函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+实现unix里的 fgrap命令，第一个参数是字符串参数 
+
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/04-\/19
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fgrep_8c_a1aedaca7c0244922c5ed1320d9821049}\label{fgrep_8c_a1aedaca7c0244922c5ed1320d9821049}} 
+\index{fgrep.c@{fgrep.c}!cmp\_str@{cmp\_str}}
+\index{cmp\_str@{cmp\_str}!fgrep.c@{fgrep.c}}
+\doxysubsubsection{\texorpdfstring{cmp\_str()}{cmp\_str()}}
+{\footnotesize\ttfamily int cmp\+\_\+str (\begin{DoxyParamCaption}\item[{char $\ast$}]{src,  }\item[{char $\ast$}]{dst }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & 源字符串 \\
+\hline
+{\em dst} & 要对比的字符串 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 如果匹配则返回1，否则返回0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fgrep_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{fgrep_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{fgrep.c@{fgrep.c}!main@{main}}
+\index{main@{main}!fgrep.c@{fgrep.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+主函数，接受命令行参数并调用其他函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & 命令行参数数量 \\
+\hline
+{\em argv} & 命令行参数列表 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 返回程序执行状态 
+\end{DoxyReturn}
+\mbox{\Hypertarget{fgrep_8c_a37e250827e16bb9b0c85458c5f72614a}\label{fgrep_8c_a37e250827e16bb9b0c85458c5f72614a}} 
+\index{fgrep.c@{fgrep.c}!print\_str@{print\_str}}
+\index{print\_str@{print\_str}!fgrep.c@{fgrep.c}}
+\doxysubsubsection{\texorpdfstring{print\_str()}{print\_str()}}
+{\footnotesize\ttfamily void print\+\_\+str (\begin{DoxyParamCaption}\item[{char $\ast$}]{str,  }\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+打印文件中匹配的字符串的行号 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & 要查找的字符串 \\
+\hline
+{\em filename} & 文件名 \\
+\hline
+\end{DoxyParams}

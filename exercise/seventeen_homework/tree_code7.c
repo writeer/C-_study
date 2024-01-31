@@ -1,0 +1,308 @@
+//tree.c --树的支持函数
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "tree_code7.h"
+
+//局部数据类型
+typedef struct pair{
+    Trnode * parent;
+    Trnode * child;
+}Pair;
+
+//局部函数原型
+static Trnode * MakeNode(const Item * pi);
+static bool ToLeft(const Item * i1,const Item * i2);
+static bool ToRight(const Item * i1,const Item * i2);
+static void AddNode(Trnode * new_node, Trnode * root);
+static void InOrder(const Trnode * root,void(*pfun)(Item item));
+static Pair SeekItem(const Item * pi,const Tree * ptree);
+static void DeleteNode(Trnode **ptr);
+static void DeleteAllNodes(Trnode * ptr);
+
+/*函数定义*/
+void InitializeTree(Tree * ptree)
+{
+    ptree->root = NULL;
+    ptree->size = 0;
+}
+
+bool TreeIsEmpty(const Tree * ptree)
+{
+    if(ptree->root == NULL)
+        return true;
+    else
+        return false;
+}
+
+bool TreeIsFull(const Tree * ptree)
+{
+   Trnode * new;
+    new = (Trnode *) malloc(sizeof(Trnode));
+    if(new == NULL){free(new);
+        return true;}
+    else{free(new);
+        return false;}
+}
+
+int TreeItemCount(const Tree * ptree)
+{
+    return ptree->size;
+}
+
+bool AddItem(const Item * pi,Tree * ptree)
+{
+    Trnode * new_node;
+    Trnode * current;
+    if(TreeIsFull(ptree))
+    {
+        fprintf(stderr,"Tree is full\n");
+        return false;
+    }
+    if ((current = (SeekItem(pi,ptree).child)) != NULL){
+        current->item.count++;
+        return true;
+    }
+    new_node = MakeNode(pi);//指向新节点
+    if (new_node == NULL)
+    {
+        fprintf(stderr,"Couldn't create node\n");
+        return false;
+    }
+    //成功创建了一个新节点
+    ptree->size++;
+    if(ptree->root == NULL) //情况：树为空
+        ptree->root = new_node;//新节点作为树的根节点
+    else
+            AddNode(new_node,ptree->root); //在数中添加新节点
+                
+    return true;    //添加成功
+    
+    
+}
+
+bool In_Tree(const Item * pi,const Tree * ptree)
+{
+    return (SeekItem(pi,ptree).child == NULL) ? false : true;
+}
+
+Item InTree(const Item * pi,const Tree * ptree)
+{
+    Trnode * current = SeekItem(pi,ptree).child;
+    if((current == NULL) ? false : true)
+        return current->item;
+}
+
+bool DeleteItem(const Item * pi,Tree * ptree)
+{
+    Pair look;
+    look = SeekItem(pi,ptree);
+    if(look.child == NULL)
+        return false;
+
+    if(look.parent == NULL)//删除根节点
+        DeleteNode(&ptree->root);
+    else if(look.parent->left == look.child)
+        DeleteNode(&look.parent->left);
+    else
+        DeleteNode(&look.parent->right);
+
+    return true;
+}
+
+void Traverse(const Tree * ptree,void(*pfun)(Item item))
+{
+    if(ptree != NULL)
+        InOrder(ptree->root,pfun);
+}
+
+void DeleteAll(Tree * ptree)
+{
+    if(ptree != NULL)
+        DeleteAllNodes(ptree->root);
+    ptree->root = NULL;
+    ptree->size = 0;
+}
+
+/*局部函数*/
+//遍历树，方法是中序遍历
+static void InOrder(const Trnode * root,void(*pfun)(Item item))
+{
+    if (root != NULL)
+    {
+        InOrder(root->left,pfun);
+        (*pfun)(root->item);
+        InOrder(root->right,pfun);
+    }
+    
+}
+
+/**
+ * @brief 删除所有节点
+ * 
+ * @param root 这个节点下的所有
+ */
+static void DeleteAllNodes(Trnode * root)
+{
+    Trnode * pright;
+
+    if (root != NULL)
+    {
+        pright = root->right;
+        DeleteAllNodes(root->left);
+        free(root);
+        DeleteAllNodes(pright);
+    }
+    
+}
+
+/**
+ * @brief 添加节点
+ * 
+ * @param new_node 
+ * @param root 
+ */
+static void AddNode(Trnode * new_node,Trnode * root)
+{
+    if(ToLeft(&new_node->item,&root->item))
+    {
+        if(root->left == NULL) //空子树
+            root->left = new_node; //把节点添加到此处
+        else
+            AddNode(new_node,root->left);//否则处理该子树
+        
+    }
+    else if(ToRight(&new_node->item, &root->item))
+    {
+        if(root->right == NULL)
+            root->right = new_node;
+        else
+            AddNode(new_node,root->right);
+    }
+    else 
+    {
+
+        /*fprintf(stderr,"location error in AddNode()\n");
+        exit(1);*/
+    }
+}
+
+/**
+ * @brief 比较左值
+ * 
+ * @param i1 
+ * @param i2 
+ * @return true 
+ * @return false 
+ */
+static bool ToLeft(const Item * i1,const Item *i2)
+{
+    int comp1;
+
+    if((comp1 = strcmp(i1->word, i2->word)) < 0)
+        return true;
+    else
+        return false;
+}
+
+/**
+ * @brief 比较右值
+ * 
+ */
+static bool ToRight(const Item * i1,const Item * i2)
+{
+    int comp1;
+
+    
+    if((comp1 = strcmp(i1->word, i2->word)) > 0)
+        return true;
+    else
+        return false;
+}
+
+/**
+ * @brief 创建新节点
+ * 
+ * @param pi 
+ * @return Trnode* 
+ */
+static Trnode * MakeNode(const Item * pi)
+{
+    Trnode * new_node;
+
+    new_node = (Trnode *) malloc(sizeof(Trnode));
+
+    if (new_node != NULL)
+    {
+        new_node->item = *pi;
+        new_node->left = NULL;
+        new_node->right = NULL;
+    }
+   return new_node; 
+}
+
+/**
+ * @brief 查找节点
+ * 
+ */
+static Pair SeekItem(const Item * pi,const Tree * ptree)
+{
+    Pair look;
+    look.parent = NULL;
+    look.child = ptree->root;
+
+    if(look.child == NULL)
+        return look; //提前返回
+    while (look.child != NULL)
+    {
+        if (ToLeft(pi,&(look.child->item)))
+        {
+            look.parent = look.child;
+            look.child = look.child->left;
+        }
+        else if (ToRight(pi,&(look.child->item)))
+        {
+            look.parent = look.child;
+            look.child = look.child->right;
+        }
+        else    //如果前两种情况都不满足，则必定是相等情况
+            break; //look.child 目标项的节点
+        
+    }
+
+    return look;
+}
+
+/**
+ * @brief 删除节点
+ * 
+ */
+static void DeleteNode(Trnode **ptr)
+/*ptr 是指向目标节点的父节点指针成员的地址*/
+{
+    Trnode * temp;
+
+    if ((*ptr)->left == NULL)
+    {
+        temp = *ptr;
+        *ptr = (*ptr)->right;
+        free(temp);
+    }
+    else if ((*ptr)->right == NULL)
+    {
+        temp = *ptr;
+        *ptr = (*ptr)->left;
+        free(temp);
+    }
+    else //被删除的节点有两个子节点
+    {//找到重新连接右子树的位置
+        for ( temp = (*ptr)->left;temp->right != NULL;temp = temp->right)
+            continue;
+        temp->right = (*ptr)->right;
+        temp = *ptr;
+        *ptr = (*ptr)->left;
+        free(temp);
+        
+    }
+    
+}

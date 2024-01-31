@@ -1,0 +1,62 @@
+\hypertarget{function__last_8c}{}\doxysection{function\+\_\+last.\+c File Reference}
+\label{function__last_8c}\index{function\_last.c@{function\_last.c}}
+
+
+写个快排，比较简单,13章第4题。  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{function__last_8c_a7ebcd4b6600aff6bb621cb746af25f3c}{sort}} (void $\ast$str, int count, size\+\_\+t len, int($\ast$cmp)(void $\ast$, void $\ast$, size\+\_\+t))
+\begin{DoxyCompactList}\small\item\em 排序函数 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{function__last_8c_a2894dac7c418f5c982250c95d34bd107}\label{function__last_8c_a2894dac7c418f5c982250c95d34bd107}} 
+int {\bfseries compare} (void $\ast$dst, void $\ast$src, size\+\_\+t leng)
+\item 
+\mbox{\Hypertarget{function__last_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{function__last_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+写个快排，比较简单,13章第4题。 
+
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/03-\/15
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{function__last_8c_a7ebcd4b6600aff6bb621cb746af25f3c}\label{function__last_8c_a7ebcd4b6600aff6bb621cb746af25f3c}} 
+\index{function\_last.c@{function\_last.c}!sort@{sort}}
+\index{sort@{sort}!function\_last.c@{function\_last.c}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily void sort (\begin{DoxyParamCaption}\item[{void $\ast$}]{str,  }\item[{int}]{count,  }\item[{size\+\_\+t}]{len,  }\item[{int($\ast$)(void $\ast$, void $\ast$, size\+\_\+t)}]{cmp }\end{DoxyParamCaption})}
+
+
+
+排序函数 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & 排序数组的第一个指针 \\
+\hline
+{\em count} & 数组中值的个数 \\
+\hline
+{\em len} & 数组中元素长度 \\
+\hline
+{\em cmp} & 回调函数用于比较 \\
+\hline
+\end{DoxyParams}

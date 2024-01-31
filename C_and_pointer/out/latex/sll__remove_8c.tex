@@ -1,0 +1,83 @@
+\hypertarget{sll__remove_8c}{}\doxysection{sll\+\_\+remove.\+c File Reference}
+\label{sll__remove_8c}\index{sll\_remove.c@{sll\_remove.c}}
+
+
+从链表中移除一个节点  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}singly\+\_\+linked\+\_\+node.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{sll__remove_8c_a798a2d629669bf2a00b4cffd3573e377}{sll\+\_\+remove}} (struct \mbox{\hyperlink{struct_n_o_d_e}{NODE}} $\ast$$\ast$rootp, struct \mbox{\hyperlink{struct_n_o_d_e}{NODE}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em 删除一个节点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sll__remove_8c_acd5fc42684106010fdbc6c5d0bdfd818}{print\+List}} (struct \mbox{\hyperlink{struct_n_o_d_e}{NODE}} $\ast$first)
+\begin{DoxyCompactList}\small\item\em 输出单链表的所有节点的值 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{sll__remove_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{sll__remove_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+从链表中移除一个节点 
+
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/03-\/13
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sll__remove_8c_acd5fc42684106010fdbc6c5d0bdfd818}\label{sll__remove_8c_acd5fc42684106010fdbc6c5d0bdfd818}} 
+\index{sll\_remove.c@{sll\_remove.c}!printList@{printList}}
+\index{printList@{printList}!sll\_remove.c@{sll\_remove.c}}
+\doxysubsubsection{\texorpdfstring{printList()}{printList()}}
+{\footnotesize\ttfamily void print\+List (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_n_o_d_e}{NODE}} $\ast$}]{first }\end{DoxyParamCaption})}
+
+
+
+输出单链表的所有节点的值 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & 链表的第一个节点指针\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & 链表的第一个节点指针 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sll__remove_8c_a798a2d629669bf2a00b4cffd3573e377}\label{sll__remove_8c_a798a2d629669bf2a00b4cffd3573e377}} 
+\index{sll\_remove.c@{sll\_remove.c}!sll\_remove@{sll\_remove}}
+\index{sll\_remove@{sll\_remove}!sll\_remove.c@{sll\_remove.c}}
+\doxysubsubsection{\texorpdfstring{sll\_remove()}{sll\_remove()}}
+{\footnotesize\ttfamily bool sll\+\_\+remove (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_n_o_d_e}{NODE}} $\ast$$\ast$}]{rootp,  }\item[{struct \mbox{\hyperlink{struct_n_o_d_e}{NODE}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+删除一个节点 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rootp} & 根指针 \\
+\hline
+{\em node} & 需要删除的节点指针 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}

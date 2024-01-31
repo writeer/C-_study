@@ -1,0 +1,107 @@
+\hypertarget{point__seven_8c}{}\doxysection{point\+\_\+seven.\+c File Reference}
+\label{point__seven_8c}\index{point\_seven.c@{point\_seven.c}}
+
+
+把一个单词插入到索引表中，本题是第十二章第七题，也是chatgpt生成 因为我大概知道该怎么写了，但是懒得写测试用例，所以选择了\+Ai帮忙  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_word_node}{Word\+Node}}
+\begin{DoxyCompactList}\small\item\em 二级链表的节点结构体，存储一个单词和指向下一个节点的指针 \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_node}{Node}}
+\begin{DoxyCompactList}\small\item\em 一级链表的节点结构体，存储一个字母和一个指向该字母对应的二级链表的指针 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{point__seven_8c_a3b09f37e675bcd48a01bf22155996872}\label{point__seven_8c_a3b09f37e675bcd48a01bf22155996872}} 
+typedef struct \mbox{\hyperlink{struct_node}{Node}} {\bfseries Node}
+\begin{DoxyCompactList}\small\item\em 一级链表的节点结构体，存储一个字母和一个指向该字母对应的二级链表的指针 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{point__seven_8c_a901e6f71f937a42568f1be4eaab0a9cd}{print\+Index\+List}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$index)
+\item 
+void \mbox{\hyperlink{point__seven_8c_a56597497b48e1ffed9b05a38d289c729}{clear\+Index\+List}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$index)
+\begin{DoxyCompactList}\small\item\em 清空索引表 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{point__seven_8c_a2e1a1dce45583e820735a8733c88a1b9}{insert\+Word\+To\+List}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$list, char $\ast$word)
+\begin{DoxyCompactList}\small\item\em 用于插入单词到索引表中 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{point__seven_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{point__seven_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+把一个单词插入到索引表中，本题是第十二章第七题，也是chatgpt生成 因为我大概知道该怎么写了，但是懒得写测试用例，所以选择了\+Ai帮忙 
+
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+我发现\+Ai写的有点问题，可能是复制的原因，我明天重新写过，还是不能偷懒 \begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/03-\/13
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{point__seven_8c_a56597497b48e1ffed9b05a38d289c729}\label{point__seven_8c_a56597497b48e1ffed9b05a38d289c729}} 
+\index{point\_seven.c@{point\_seven.c}!clearIndexList@{clearIndexList}}
+\index{clearIndexList@{clearIndexList}!point\_seven.c@{point\_seven.c}}
+\doxysubsubsection{\texorpdfstring{clearIndexList()}{clearIndexList()}}
+{\footnotesize\ttfamily void clear\+Index\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$}]{index }\end{DoxyParamCaption})}
+
+
+
+清空索引表 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & 指向一级链表的指针 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{point__seven_8c_a2e1a1dce45583e820735a8733c88a1b9}\label{point__seven_8c_a2e1a1dce45583e820735a8733c88a1b9}} 
+\index{point\_seven.c@{point\_seven.c}!insertWordToList@{insertWordToList}}
+\index{insertWordToList@{insertWordToList}!point\_seven.c@{point\_seven.c}}
+\doxysubsubsection{\texorpdfstring{insertWordToList()}{insertWordToList()}}
+{\footnotesize\ttfamily bool insert\+Word\+To\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$}]{list,  }\item[{char $\ast$}]{word }\end{DoxyParamCaption})}
+
+
+
+用于插入单词到索引表中 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & 一个指向指向一级链表的指针的指针\\
+\hline
+{\em word} & 要插入的单词字符串\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 插入成功
+
+false 插入失败 
+\end{DoxyReturn}
+\mbox{\Hypertarget{point__seven_8c_a901e6f71f937a42568f1be4eaab0a9cd}\label{point__seven_8c_a901e6f71f937a42568f1be4eaab0a9cd}} 
+\index{point\_seven.c@{point\_seven.c}!printIndexList@{printIndexList}}
+\index{printIndexList@{printIndexList}!point\_seven.c@{point\_seven.c}}
+\doxysubsubsection{\texorpdfstring{printIndexList()}{printIndexList()}}
+{\footnotesize\ttfamily void print\+Index\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{index }\end{DoxyParamCaption})}
+
+打印索引表中所有单词的信息 
+\begin{DoxyParams}{Parameters}
+{\em index} & 索引表的头指针 打印索引表中的所有单词及其对应的页码\\
+\hline
+{\em index} & 索引表 \\
+\hline
+\end{DoxyParams}

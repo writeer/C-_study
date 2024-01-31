@@ -1,0 +1,47 @@
+\hypertarget{array_8c}{}\doxysection{array.\+c File Reference}
+\label{array_8c}\index{array.c@{array.c}}
+
+
+访问伪数组 因为我看不太懂算式，不过后面还是看懂了，但是我先找了其他的。 我从\+CSDN上复制的代码，原本还有另外一个，但是我发现他写的不对，就用了这个。  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{array_8c_a7ba3949b1f197baf0354d41124bdbe88}\label{array_8c_a7ba3949b1f197baf0354d41124bdbe88}} 
+\#define {\bfseries MAX\+\_\+\+DIM}~10
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{array_8c_ace95471ecdcc8f6fb847223f3b11bfe3}\label{array_8c_ace95471ecdcc8f6fb847223f3b11bfe3}} 
+int {\bfseries array\+\_\+offset} (int arrayinfo\mbox{[}$\,$\mbox{]},...)
+\item 
+\mbox{\Hypertarget{array_8c_ab62d2fc5e3aeea0b9b54a106ed9b7bf9}\label{array_8c_ab62d2fc5e3aeea0b9b54a106ed9b7bf9}} 
+int {\bfseries compute\+\_\+offset} (int dim, int $\ast$arrayinfo, int $\ast$arg, unsigned int $\ast$weight)
+\item 
+\mbox{\Hypertarget{array_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{array_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+int {\bfseries main} (void)
+\item 
+\mbox{\Hypertarget{array_8c_a26647769aa5569efc1f08ceb335946fd}\label{array_8c_a26647769aa5569efc1f08ceb335946fd}} 
+int {\bfseries array\+\_\+offset} (int $\ast$arrayinfo,...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+访问伪数组 因为我看不太懂算式，不过后面还是看懂了，但是我先找了其他的。 我从\+CSDN上复制的代码，原本还有另外一个，但是我发现他写的不对，就用了这个。 
+
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/02-\/26
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}

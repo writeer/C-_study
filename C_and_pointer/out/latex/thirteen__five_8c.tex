@@ -1,0 +1,56 @@
+\hypertarget{thirteen__five_8c}{}\doxysection{thirteen\+\_\+five.\+c File Reference}
+\label{thirteen__five_8c}\index{thirteen\_five.c@{thirteen\_five.c}}
+
+
+C和指针 第13章第五题 我从网上抄的代码，用chat\+GPT写的注释和测试用例，这题并不难，问题在于题目翻译的太绕，我理解起来不太容易，直接看代码好多了。  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{thirteen__five_8c_a99fb83031ce9923c84392b4e92f956b5}\label{thirteen__five_8c_a99fb83031ce9923c84392b4e92f956b5}} 
+enum \{ {\bfseries NONE}
+, {\bfseries FLAG}
+, {\bfseries ARG}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{thirteen__five_8c_a0a69b01d6d6f36d3031bf538b6cd5da7}\label{thirteen__five_8c_a0a69b01d6d6f36d3031bf538b6cd5da7}} 
+int {\bfseries argtype} (register int ch, register int $\ast$control)
+\item 
+\mbox{\Hypertarget{thirteen__five_8c_a355c3fd652b7c1507296310ebaa3bf87}\label{thirteen__five_8c_a355c3fd652b7c1507296310ebaa3bf87}} 
+char $\ast$$\ast$ {\bfseries do\+\_\+args} (int argc, char $\ast$$\ast$argv, char $\ast$control, void($\ast$do\+\_\+arg)(int ch, char $\ast$value), void($\ast$illegal\+\_\+arg)(int ch))
+\item 
+\mbox{\Hypertarget{thirteen__five_8c_a51256013635786c90e3c5b228f28461d}\label{thirteen__five_8c_a51256013635786c90e3c5b228f28461d}} 
+void {\bfseries print\+\_\+flag} (int ch, char $\ast$value)
+\item 
+\mbox{\Hypertarget{thirteen__five_8c_ab9a06670eb5802acb447b65a4d95aa89}\label{thirteen__five_8c_ab9a06670eb5802acb447b65a4d95aa89}} 
+void {\bfseries print\+\_\+arg} (int ch, char $\ast$value)
+\item 
+\mbox{\Hypertarget{thirteen__five_8c_ae8f64a6035693e0890ec6298c45d67ef}\label{thirteen__five_8c_ae8f64a6035693e0890ec6298c45d67ef}} 
+void {\bfseries illegal\+\_\+arg} (int ch)
+\item 
+\mbox{\Hypertarget{thirteen__five_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{thirteen__five_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+C和指针 第13章第五题 我从网上抄的代码，用chat\+GPT写的注释和测试用例，这题并不难，问题在于题目翻译的太绕，我理解起来不太容易，直接看代码好多了。 
+
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/03-\/17
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}

@@ -1,0 +1,136 @@
+#include <stdio.h>
+#include <stdlib.h> //提供rand() and srand()
+#include <time.h> //提供 time()
+#include "queue17.6.h" //更改Item 的 typedef
+#define MIN_PER_HR 60.0
+
+/**
+ * @brief s是否有新顾客到来
+ * 
+ * @param x 
+ * @return true 
+ * @return false 
+ */
+bool newcustomer(double x); 
+
+//设置新顾客参数
+Item customertime(long when);
+
+int main(void)
+{
+    Queue line;
+    Queue line_two;
+    Item temp;      //新的顾客
+    int hours;      //模拟的小时数
+    int perhour;    //每小时平均多少位顾客
+    long cycle,cyclelimit; //循环计数器，计数器上限
+    long turnaways = 0; //因队列已满被拒的顾客数量
+    long customers = 0; //加入队列的顾客数量
+    long served = 0; //在模拟期间咨询过Sigmund的顾客数量
+    long sum_line = 0; //累计的队列总长
+    int wait_time = 0; //从当前到sigmund空闲所需时间
+    double min_per_cust; //顾客到来的平均时间
+    long line_wait = 0; //队列累计等待时间
+    int wait_time_two = 0; //第二个队列 从当前到sigmund空闲所需时间
+
+    InitializeQueue(&line);
+    InitializeQueue(&line_two);
+    srand((unsigned int) time(0)); //rand随机初始化
+    puts("Case Study: Sigmund Lander's Advice Nooth");
+    puts("Enter the number of simulation hours:");
+    scanf("%d",&hours);
+    cyclelimit = MIN_PER_HR * hours;
+    puts("Enter the average number of customers per hour:");
+    scanf("%d",&perhour);
+    min_per_cust = MIN_PER_HR / perhour;
+
+    for ( cycle = 0; cycle < cyclelimit; cycle++)
+    {
+        if(newcustomer(min_per_cust)){
+        if(QueueIsFull(&line))
+            if(QueueIsFull(&line_two))
+                turnaways++;
+            else
+            {
+                customers++;
+                temp = customertime(cycle);
+                EnQueue(temp,&line_two);
+            }
+        else
+            {
+                customers++;
+                temp = customertime(cycle);
+                EnQueue(temp,&line);
+            }
+        }
+    
+    if (wait_time <= 0 && !QueueIsEmpty(&line))
+    {
+        DeQueue(&temp,&line);
+        wait_time = temp.processtime;
+        line_wait += cycle - temp.arrive;
+        served++;
+    }
+    if(!QueueIsEmpty(&line_two) && wait_time_two <= 0)
+        {
+            
+                DeQueue(&temp,&line_two);
+                wait_time_two = temp.processtime;
+                line_wait += cycle - temp.arrive;
+                served++;
+            
+        }
+    if(wait_time > 0)
+        wait_time--;
+    if(wait_time_two > 0)
+        wait_time_two--;
+    sum_line += QueueItemCount(&line);
+    if(!QueueIsEmpty(&line_two))
+        sum_line += QueueItemCount(&line_two);
+    }
+    if (customers > 0)
+    {
+        printf("cusyomers accepted: %ld\n",customers);
+        printf("  customers served: %ld\n",served);
+        printf("      turnaways: %ld\n",turnaways);
+        printf("average queue size: %.2f\n",(double) sum_line / cyclelimit);
+        printf("average wait time: %.2f minutes\n",(double) line_wait / served);
+    }
+    else
+        puts("No customers!");
+    EmptyTheQueue(&line);
+    EmptyTheQueue(&line_two);
+    puts("Bye!");
+
+    return 0;
+    
+    
+}
+/**
+ * @brief 
+ * @param x 顾客到来的平均时间
+ * @return 如果一分钟内有顾客到来，则返回true
+ */
+bool newcustomer(double x)
+{
+    if(rand() * x / RAND_MAX < 1)
+        return true;
+    else
+        return false;
+}
+
+/**
+ * @brief 
+ * @param when 是顾客到来的时间
+ * @return 返回一个Item结构，该顾客到达时间设置为when
+ * 咨询时间设置为1~3的随机值
+ */ 
+Item customertime(long when)
+{
+    Item cust;
+
+    cust.processtime = rand() % 3 + 1;
+    cust.arrive = when;
+
+    return cust;
+}

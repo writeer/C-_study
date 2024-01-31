@@ -1,0 +1,165 @@
+\begin{theindex}
+
+  \item {array.c}, \hyperpage{11}
+
+  \indexspace
+
+  \item {Binary\_inversion.c}, \hyperpage{12}
+  \item {bit\_segment.c}, \hyperpage{12}
+  \item {branch}, \hyperpage{5}
+
+  \indexspace
+
+  \item {clearIndexList}
+    \subitem {point\_seven.c}, \hyperpage{29}
+  \item {cmp\_str}
+    \subitem {fgrep.c}, \hyperpage{20}
+  \item {copy\_n.c}, \hyperpage{13}
+  \item {count\_str.c}, \hyperpage{14}
+  \item {customer}, \hyperpage{5}
+
+  \indexspace
+
+  \item {dbl\_op}, \hyperpage{5}
+  \item {deblank}
+    \subitem {space\_only.c}, \hyperpage{35}
+  \item {def.c}, \hyperpage{14}
+  \item {def\_b.c}, \hyperpage{15}
+  \item {del\_substr}
+    \subitem {del\_substr.c}, \hyperpage{16}
+  \item {del\_substr.c}, \hyperpage{16}
+    \subitem {del\_substr}, \hyperpage{16}
+  \item {Digit\_group.c}, \hyperpage{17}
+
+  \indexspace
+
+  \item {eight\_queen\_question.c}, \hyperpage{18}
+
+  \indexspace
+
+  \item {family\_age.c}, \hyperpage{19}
+  \item {fgrep.c}, \hyperpage{19}
+    \subitem {cmp\_str}, \hyperpage{20}
+    \subitem {main}, \hyperpage{20}
+    \subitem {print\_str}, \hyperpage{21}
+  \item {first.c}, \hyperpage{21}
+    \subitem {main}, \hyperpage{22}
+    \subitem {read\_column\_numbers}, \hyperpage{22}
+    \subitem {rearrange}, \hyperpage{23}
+  \item {full\_sales}, \hyperpage{6}
+  \item {function\_last.c}, \hyperpage{23}
+    \subitem {sort}, \hyperpage{24}
+
+  \indexspace
+
+  \item {gcd.c}, \hyperpage{24}
+  \item {gets\_string.c}, \hyperpage{25}
+
+  \indexspace
+
+  \item {head}, \hyperpage{6}
+
+  \indexspace
+
+  \item {identity.c}, \hyperpage{26}
+  \item {insertWordToList}
+    \subitem {point\_seven.c}, \hyperpage{29}
+
+  \indexspace
+
+  \item {key\_encode.c}, \hyperpage{27}
+    \subitem {prepare\_key}, \hyperpage{27}
+
+  \indexspace
+
+  \item {lease\_sales}, \hyperpage{6}
+  \item {letter}
+    \subitem {Node}, \hyperpage{8}
+  \item {loan\_sales}, \hyperpage{7}
+
+  \indexspace
+
+  \item {machine\_inst}, \hyperpage{7}
+  \item {main}
+    \subitem {fgrep.c}, \hyperpage{20}
+    \subitem {first.c}, \hyperpage{22}
+  \item {misc}, \hyperpage{7}
+
+  \indexspace
+
+  \item {next}
+    \subitem {Node}, \hyperpage{8}
+    \subitem {WordNode}, \hyperpage{10}
+  \item {NODE}, \hyperpage{9}
+  \item {Node}, \hyperpage{8}
+    \subitem {letter}, \hyperpage{8}
+    \subitem {next}, \hyperpage{8}
+    \subitem {words}, \hyperpage{8}
+
+  \indexspace
+
+  \item {point\_seven.c}, \hyperpage{28}
+    \subitem {clearIndexList}, \hyperpage{29}
+    \subitem {insertWordToList}, \hyperpage{29}
+    \subitem {printIndexList}, \hyperpage{30}
+  \item {prepare\_key}
+    \subitem {key\_encode.c}, \hyperpage{27}
+  \item {print.c}, \hyperpage{30}
+  \item {print\_str}
+    \subitem {fgrep.c}, \hyperpage{21}
+  \item {printIndexList}
+    \subitem {point\_seven.c}, \hyperpage{30}
+  \item {printList}
+    \subitem {sll\_remove.c}, \hyperpage{33}
+    \subitem {test\_singly\_linked\_list.c}, \hyperpage{38}
+
+  \indexspace
+
+  \item {queue}, \hyperpage{9}
+
+  \indexspace
+
+  \item {rand.c}, \hyperpage{31}
+  \item {read\_column\_numbers}
+    \subitem {first.c}, \hyperpage{22}
+  \item {rearrange}
+    \subitem {first.c}, \hyperpage{23}
+  \item {reg\_src}, \hyperpage{9}
+
+  \indexspace
+
+  \item {simple\_data\_structure.c}, \hyperpage{32}
+  \item {sll\_remove}
+    \subitem {sll\_remove.c}, \hyperpage{34}
+  \item {sll\_remove.c}, \hyperpage{33}
+    \subitem {printList}, \hyperpage{33}
+    \subitem {sll\_remove}, \hyperpage{34}
+  \item {sort}
+    \subitem {function\_last.c}, \hyperpage{24}
+  \item {space\_only.c}, \hyperpage{34}
+    \subitem {deblank}, \hyperpage{35}
+  \item {sql\_op}, \hyperpage{9}
+  \item {store.c}, \hyperpage{35}
+    \subitem {store\_bit\_field}, \hyperpage{36}
+  \item {store\_bit\_field}
+    \subitem {store.c}, \hyperpage{36}
+  \item {sum.c}, \hyperpage{37}
+
+  \indexspace
+
+  \item {test\_singly\_linked\_list.c}, \hyperpage{37}
+    \subitem {printList}, \hyperpage{38}
+  \item {test\_static.c}, \hyperpage{38}
+  \item {thirteen\_five.c}, \hyperpage{39}
+
+  \indexspace
+
+  \item {word}
+    \subitem {WordNode}, \hyperpage{10}
+  \item {WordNode}, \hyperpage{10}
+    \subitem {next}, \hyperpage{10}
+    \subitem {word}, \hyperpage{10}
+  \item {words}
+    \subitem {Node}, \hyperpage{8}
+
+\end{theindex}

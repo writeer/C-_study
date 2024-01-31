@@ -1,0 +1,93 @@
+\hypertarget{first_8c}{}\doxysection{first.\+c File Reference}
+\label{first_8c}\index{first.c@{first.c}}
+
+
+这个程序从标准输入中读取输入行并在标准输出中打印这些输入行 每个输入行的后面一行是该行内容的一部分  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{first_8c_a551f71f92f90f76151a3cfc9679271a0}\label{first_8c_a551f71f92f90f76151a3cfc9679271a0}} 
+\#define {\bfseries MAX\+\_\+\+COLS}~20
+\item 
+\mbox{\Hypertarget{first_8c_a00c1f0e7816626f58349492ef0720b5f}\label{first_8c_a00c1f0e7816626f58349492ef0720b5f}} 
+\#define {\bfseries MAX\+\_\+\+INPUT}~1000
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{first_8c_a09337ee69049772c856b474980d3b9d3}{read\+\_\+column\+\_\+numbers}} (int columns\mbox{[}$\,$\mbox{]}, int max)
+\begin{DoxyCompactList}\small\item\em 读取列标号，如果超出规定范围则不予理会 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{first_8c_afcff7a998206651851e97153f07d2610}{rearrange}} (char $\ast$output, char const $\ast$input, int n\+\_\+columns, int const columns\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{first_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+这个程序从标准输入中读取输入行并在标准输出中打印这些输入行 每个输入行的后面一行是该行内容的一部分 
+
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+输入第一行是一串列标号，串的最后一个负数负责结尾 这些列标号成对出现，说明需要打印的输入行的列的范围 例如，0 3 10 12 -\/1表示第0列到第三列，第十列到第12列的内容将被打印 上面的内容是第一行需要输入的 翻译的太差了，我看了程序重新说一下这个程序的这几个参数的意思。 0 3 是打印0-\/3列，然后第二组10 12 是打印10-\/12列，-\/1是表示列标号获取结束。 所以在rearrange()函数里，进行了一个字符串拼接，用于输出 \begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/11-\/09
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{first_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{first_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{first.c@{first.c}!main@{main}}
+\index{main@{main}!first.c@{first.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+读取该串列标号
+
+读取、处理和打印剩余的输入行\mbox{\Hypertarget{first_8c_a09337ee69049772c856b474980d3b9d3}\label{first_8c_a09337ee69049772c856b474980d3b9d3}} 
+\index{first.c@{first.c}!read\_column\_numbers@{read\_column\_numbers}}
+\index{read\_column\_numbers@{read\_column\_numbers}!first.c@{first.c}}
+\doxysubsubsection{\texorpdfstring{read\_column\_numbers()}{read\_column\_numbers()}}
+{\footnotesize\ttfamily int read\+\_\+column\+\_\+numbers (\begin{DoxyParamCaption}\item[{int}]{columns\mbox{[}$\,$\mbox{]},  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+
+
+读取列标号，如果超出规定范围则不予理会 
+
+
+\begin{DoxyParams}{Parameters}
+{\em columns} & \\
+\hline
+{\em max} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+取得列标号，如果所读取的数小于0则停止
+
+确认已经读取的标号为偶数个，因为他们是以对的形式出现的
+
+丢弃该行中包含最后一个数字的那部分内容\mbox{\Hypertarget{first_8c_afcff7a998206651851e97153f07d2610}\label{first_8c_afcff7a998206651851e97153f07d2610}} 
+\index{first.c@{first.c}!rearrange@{rearrange}}
+\index{rearrange@{rearrange}!first.c@{first.c}}
+\doxysubsubsection{\texorpdfstring{rearrange()}{rearrange()}}
+{\footnotesize\ttfamily void rearrange (\begin{DoxyParamCaption}\item[{char $\ast$}]{output,  }\item[{char const $\ast$}]{input,  }\item[{int}]{n\+\_\+columns,  }\item[{int const}]{columns\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+处理每对列标号
+
+如果输入行结束或输出行已满，就结束任务
+
+如果输出行数据空间不够，只复制可以容纳的数据
+
+复制相关数据

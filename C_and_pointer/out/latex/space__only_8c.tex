@@ -1,0 +1,51 @@
+\hypertarget{space__only_8c}{}\doxysection{space\+\_\+only.\+c File Reference}
+\label{space__only_8c}\index{space\_only.c@{space\_only.c}}
+
+
+如果有多个空格，简化为一个  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{space__only_8c_a75078fbbe19ae03c78808a627fba0fa7}{deblank}} (char string\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em 这个函数，因为没有返回值，所以有两种做法，一种是用新的数组，不改变原数组，输出一个修改后的。 另一个做法是，直接在原数组上操作。但是数组的插入和删除很不方便，删了中间的空格，要偏移后面的数据。 所以我用第一种做法。 \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{space__only_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{space__only_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+int {\bfseries main} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+如果有多个空格，简化为一个 
+
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/02-\/07
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{space__only_8c_a75078fbbe19ae03c78808a627fba0fa7}\label{space__only_8c_a75078fbbe19ae03c78808a627fba0fa7}} 
+\index{space\_only.c@{space\_only.c}!deblank@{deblank}}
+\index{deblank@{deblank}!space\_only.c@{space\_only.c}}
+\doxysubsubsection{\texorpdfstring{deblank()}{deblank()}}
+{\footnotesize\ttfamily void deblank (\begin{DoxyParamCaption}\item[{char}]{string\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+这个函数，因为没有返回值，所以有两种做法，一种是用新的数组，不改变原数组，输出一个修改后的。 另一个做法是，直接在原数组上操作。但是数组的插入和删除很不方便，删了中间的空格，要偏移后面的数据。 所以我用第一种做法。 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+\end{DoxyParams}
